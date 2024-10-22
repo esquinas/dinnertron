@@ -1,4 +1,6 @@
 class Recipe < ApplicationRecord
+  has_and_belongs_to_many :ingredients
+
   validates :cook_duration, :ingredient_list, :prep_duration, :title, presence: true
 
   # author (string?)
