@@ -10,8 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 0) do
+ActiveRecord::Schema[8.0].define(version: 2024_10_22_091358) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
+  create_table "recipes", force: :cascade do |t|
+    t.string "author"
+    t.string "category"
+    t.interval "cook_duration"
+    t.string "cuisine"
+    t.string "image"
+    t.string "ingredient_list", array: true
+    t.interval "prep_duration"
+    t.float "rating"
+    t.string "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 end

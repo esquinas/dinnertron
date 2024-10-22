@@ -1,4 +1,6 @@
 class Recipe < ApplicationRecord
+  validates :cook_duration, :ingredient_list, :prep_duration, :title, presence: true
+
   # author (string?)
   # category (string?)
   # cook_duration (interval)
