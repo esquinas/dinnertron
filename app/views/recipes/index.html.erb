@@ -2,7 +2,23 @@
 
 <% content_for :title, "Recipes" %>
 
+<section>
+  <article>
+  <%= form_tag(recipes_path, method: :get) do %>
+    <%= label_tag(:q, "Select every ingredient you have:") %>
+    <% selected_ingredients = params.fetch(:q, %w[bread milk salt pepper sugar oil water]) %>
+    <%= select_tag(:q, grouped_options_for_select(@all_ingredients.group_by(&:first).to_a, selected_ingredients), multiple: true, style: "height: 40vh;") %>
+    <%= submit_tag("Find recipes", name: nil) %>
+  <% end %>
+  </article>
+</section>
+
 <section id="recipes">
+  <% if @recipes.empty? && params[:q].present? %>
+    <article id="no-recipes">
+      <i>Sorry, no recipes could be found</i>
+    </article>
+  <% end %>
   <% @recipes.each do |recipe| %>
     <article id="<%= dom_id recipe %>">
     <%= render recipe %>
