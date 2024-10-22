@@ -20,7 +20,7 @@ one:
   title: Golden Sweet Cornbread
 
 two:
-  author: deleteduser
+  author: null
   category: Monkey Bread
   cook_duration: 35 minutes
   cuisine: null
