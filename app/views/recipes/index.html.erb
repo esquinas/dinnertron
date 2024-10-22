@@ -1,0 +1,11 @@
+<aside style="color: green"><%= notice %></aside>
+
+<% content_for :title, "Recipes" %>
+
+<section id="recipes">
+  <% @recipes.each do |recipe| %>
+    <article id="<%= dom_id recipe %>">
+    <%= render recipe %>
+    </article>
+  <% end %>
+</section>

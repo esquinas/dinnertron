@@ -1,0 +1,41 @@
+<hgroup>
+  <h3><%= link_to_unless_current recipe.title, recipe %></h3>
+  <% if recipe.author %>
+  <h5>
+    By <%= recipe.author %>
+  </h5>
+  <% end %>
+  <h5>
+    Rating <%= recipe.rating %>
+  </h5>
+</hgroup>
+
+<section>
+  <strong>Preparation:</strong>
+  <%= distance_of_time_in_words(Time.current, recipe.prep_duration.from_now) %>
+  <br>
+  <strong>Cook time:</strong>
+  <%=  distance_of_time_in_words(Time.current, recipe.cook_duration.from_now) %>
+  <br>
+
+  <% if recipe.category %>
+  <strong>Category:</strong>
+  <%= recipe.category %>
+  <br>
+  <% end %>
+
+
+</section>
+
+<section>
+  <strong>Ingredient list:</strong>
+  <ul>
+  <% recipe.ingredient_list.each do |ingredient| %>
+    <li><%= ingredient %></li>
+  <% end %>
+  </ul>
+</section>
+
+<section>
+
+</section>
