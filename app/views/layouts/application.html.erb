@@ -27,12 +27,12 @@
     <header>
     <nav>
       <ul>
-        <li><strong><%= link_to_unless_current "Dinnertron", root_path %></strong></li>
+        <li><strong><%= link_to_unless_current "Dinnertron", root_path(q: []) %></strong></li>
       </ul>
     </nav>
     </header>
 
-    <main>
+    <main style="max-width: min(90vw, 65rem);">
     <%= yield %>
     </main>
   </body>
