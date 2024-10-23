@@ -15,7 +15,8 @@ This application helps users find the most relevant recipes that they can prepar
 
 ## TASKS
   - [x] I want to select/write/input the ingredients I already have at home.
-    + Done as "proof of concept" using a multiple-select HTML element with hardcoded ingrediets
+    + Done as "proof of concept" using a multiple-select HTML element with hardcoded ingredients
+    + [ ] MVP of a better ingredient input with autocomplete
   - [x] I want to easily review the relevant resulting recipes
     + Done UIs for recipes as MVP, no images yet
   - [ ] Optimize query using join table `ingredients_receipts` used for the `has_and_belongs_to_many` relationship, instead of quering inside `recipes.ingredient_list`
